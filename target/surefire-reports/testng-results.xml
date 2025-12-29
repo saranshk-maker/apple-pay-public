@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-12-26T16:47:09 IST" name="ApplePaySuite" finished-at="2025-12-26T16:51:34 IST" duration-ms="265185">
+    <groups>
+    </groups>
+    <test started-at="2025-12-26T16:47:09 IST" name="ApplePayTest" finished-at="2025-12-26T16:51:34 IST" duration-ms="265185">
+      <class name="ApplePayWebPublic">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:ApplePayWebPublic@56528192]" started-at="2025-12-26T16:47:09 IST" name="setUp" finished-at="2025-12-26T16:50:05 IST" duration-ms="175976" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testApplePayFlow()[pri:0, instance:ApplePayWebPublic@56528192]" started-at="2025-12-26T16:50:05 IST" name="testApplePayFlow" finished-at="2025-12-26T16:51:34 IST" duration-ms="89118" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testApplePayFlow -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:ApplePayWebPublic@56528192]" started-at="2025-12-26T16:51:34 IST" name="tearDown" finished-at="2025-12-26T16:51:34 IST" duration-ms="38" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- ApplePayWebPublic -->
+    </test> <!-- ApplePayTest -->
+  </suite> <!-- ApplePaySuite -->
+</testng-results>

@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="ApplePaySuite">
+    <test name="ApplePayTest">
+        <classes>
+            <class name="ApplePayWebPublic"/>
+        </classes>
+    </test>
+</suite>
