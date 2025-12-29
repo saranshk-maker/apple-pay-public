@@ -1,31 +1,26 @@
-
----
-
-## 📘 `README.md`
-
-```md
-# Apple Pay iOS Automation
+# Apple Pay Automation on Public Devices
 
 This project is a simple Java-based automation framework for testing Apple Pay flows on iOS using **Appium**, **Selenium**, and **TestNG**.
 
 ---
 
-## Prerequisites
+## Pre-requisites
 
-- macOS (Ventura or Sonoma)
+1. Clone the LambdaTest-Playwright repository on your system.
+
+2. Install the npm dependencies.
+```
 - Java JDK 17
 - Maven 3.9.6
 - Node.js 18.20.4
 - Appium 2.5.4
 - Xcode 15.2+
+```
 
-Refer to `requirements.md` for the complete setup.
+3. Replace your credentials in ApplePayWebPublic.java file.
 
----
 
-## Project Setup
-
-Clone the repository:
-```bash
-git clone <repo-url>
-cd applepay-ios
+## Run Your Tests
+```
+mvn clean test
+```
