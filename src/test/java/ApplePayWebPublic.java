@@ -23,6 +23,9 @@ public class ApplePayWebPublic {
 
     public AppiumDriver driver;
 
+    private static final String USERNAME = System.getenv("LT_USERNAME");
+    private static final String ACCESS_KEY = System.getenv("LT_ACCESS_KEY");
+
     @BeforeClass
     public void setUp() throws MalformedURLException {
 
@@ -46,10 +49,12 @@ public class ApplePayWebPublic {
 
         capabilities.setCapability("lt:options", ltOptions);
 
-        driver = new AppiumDriver(
-                new URL("https://saranshk:LT_6r3XXEyw1QLdiD5db07Z33y3LVWq9Ue6CAuUzFty8zDUUxC@mobile-hub.lambdatest.com/wd/hub"),
-                capabilities
+        String hubUrl = String.format(
+                "https://%s:%s@mobile-hub.lambdatest.com/wd/hub",
+                USERNAME, ACCESS_KEY
         );
+
+        driver = new AppiumDriver(new URL(hubUrl), capabilities);
     }
 
     @Test
@@ -58,25 +63,22 @@ public class ApplePayWebPublic {
         Thread.sleep(5000);
 
         WebElement ele = driver.findElement(By.id("transcriptButton"));
-        ele.getRect();
         int centerX = ele.getRect().x + (ele.getSize().width / 2);
         int centerY = ele.getRect().y + (ele.getSize().height / 2);
-        System.out.println("centerX" + centerX);
-        System.out.println("centerY" + centerY);
 
         PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
         Sequence tap = new Sequence(finger, 1);
-        tap.addAction(finger.createPointerMove(Duration.ofMillis(0), PointerInput.Origin.viewport(), centerX, centerY));
+        tap.addAction(finger.createPointerMove(Duration.ofMillis(0),
+                PointerInput.Origin.viewport(), centerX, centerY));
         tap.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
         tap.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
         driver.perform(Arrays.asList(tap));
 
         JSONObject json = new JSONObject();
         json.put("confirm", true);
-
         ((JavascriptExecutor) driver).executeScript("lambda-applepay", json);
-        new Actions(driver).sendKeys("123456").perform();
 
+        new Actions(driver).sendKeys("123456").perform();
         Thread.sleep(3000);
     }
 
@@ -87,5 +89,3 @@ public class ApplePayWebPublic {
         }
     }
 }
-
-// mvn clean test
