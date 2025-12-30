@@ -8,7 +8,7 @@ This project is a simple Java-based automation framework for testing Apple Pay f
 
 1. Clone the LambdaTest-Playwright repository on your system.
 
-2. Install the npm dependencies.
+2. Install the required dependencies.
 ```
 - Java JDK 17
 - Maven
