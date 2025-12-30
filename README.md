@@ -10,9 +10,10 @@ This project is a simple Java-based automation framework for testing Apple Pay f
 
 2. Install the required dependencies.
 ```
-- Java JDK 17
-- Maven
-- Appium
+- Selenium - 4.25.0
+- Appium - 9.2.2
+- TestNG - 7.10.2
+- Maven - 3.2.5
 ```
 
 3. Replace your credentials in ApplePayWebPublic.java file.
